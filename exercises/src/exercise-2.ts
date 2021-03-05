@@ -82,4 +82,3 @@ function factorialToDecimal(factorial) {
   factorial = factorial.replace(/ /g, "");
   var factorial_sz: number = factorial.length;
   factorialToDecimal(factorial);
-*/
