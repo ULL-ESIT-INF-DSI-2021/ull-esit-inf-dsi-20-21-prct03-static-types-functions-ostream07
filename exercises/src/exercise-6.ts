@@ -1,4 +1,3 @@
-/*
 function isValidISBN(check_ISBN) {
   var result: number = 0;
   var to_integer: number = 0;
@@ -27,4 +26,3 @@ var check_ISBN: string = "3-598-21507-x";
 console.log("Código ISBN: " + check_ISBN);
 console.log("Comprobando validez... ");
 isValidISBN(check_ISBN);
-*/

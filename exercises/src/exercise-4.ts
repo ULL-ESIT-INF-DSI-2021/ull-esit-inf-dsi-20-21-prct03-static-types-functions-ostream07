@@ -1,4 +1,3 @@
-/*
 function fromSnakeToCamelCase (snake_string) {  //sample_string o the_stealth_warrior
   var conver_to_capital: string = "";
   var patron: string = "_";
@@ -61,4 +60,3 @@ function fromCamelToSnakeCase (camel_string) {  //sampleString o theStealthWarri
   var camel_sz: number = camel_string.length;
   console.log("Cadena a convertir formato Snake Case: " + camel_string);
   fromCamelToSnakeCase(camel_string);
-  */

@@ -1,4 +1,3 @@
-/*
 function decimalToFactorial(num) {
   if (num > 0) {
     var v_fact: number = 0;
@@ -82,4 +81,3 @@ function factorialToDecimal(factorial) {
   factorial = factorial.replace(/ /g, "");
   var factorial_sz: number = factorial.length;
   factorialToDecimal(factorial);
-  */

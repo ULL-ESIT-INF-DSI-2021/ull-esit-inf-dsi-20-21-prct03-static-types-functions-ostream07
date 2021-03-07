@@ -1,4 +1,3 @@
-/*
 function isValid(text) {
   if (num_1 == text1_sz && num_2 == text2_sz && num_3 == text3_sz) {
       return true;
@@ -17,4 +16,3 @@ var text1_sz = text_1.length;
 var text2_sz = text_2.length;
 var text3_sz = text_3.length;
 console.log(`La cadena ${text} es: ${isValid(text)}`);
-  */
