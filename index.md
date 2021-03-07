@@ -89,8 +89,26 @@ Cadena a convertir formato Snake Case: sampleString
 Resultado de aplicar conversión: sample_string
 ```
 
-### Ejercicio 5.
+### Ejercicio 5. Nuestro amigo Chuck Norris, necesitaba que en un sola línea de código se puediera eliminar las aes y ees de todas las palabras, así como luego ordenar estas alfabéticamente y para terminar, si se incluía una cadena vacía, debía retornar Broken.
 
+Llamamos a la función `onePunch(punch)` donde le pasamos una string con las frases a tratar:
+```
+onePunch(‘Beard Jeans Hairbrush Knuckleduster Sand’)
+onePunch(‘Sock Beard Vest Lady Sage’)
+onePunch(‘Beard Sack Gun Parachute Face-Kicking-Shoes’)
+onePunch(‘Snot Snow Soda Tank Beard’)
+onePunch(‘’)
+```
+
+Con la ayuda de la concatenación de varios métodos como `replace(/[ae]/g, "")` para eliminar las letras, `.split(" ") ` para separar las por espacios en blanco, `.sort()` para ordenarlas alfabéticamente y `.join(" ")` para volver a unirlas, podemos cumplir la tarea, con un oporador ternario antes, para asegurarnos de que devuelva **Broken**, si es una cadena vacía:
+
+```
+Brd Hirbrush Jns Knuckldustr Snd
+Brd Ldy Sg Sock Vst
+Brd Fc-Kicking-Shos Gun Prchut Sck
+Brd Snot Snow Sod Tnk
+Broken
+```
 
 ### Ejercicio 6. El objetivo es tranformar un código ISBN a un número decimal por medio de una fórmula y que al dividir este por 11, el resto sea 0, en caso contrario el ISBN no será válido.
 
@@ -104,5 +122,78 @@ ISBN es: 264
 true
 ```
 
+### Ejercicio 7. Dado un número, tenemos que conseguir que nos den el número inmediatamente mayor, en caso de que ya sea el mayor con esa combinación de cifras, devolvemos -1.
 
+Creamos una función `calcularNumeroMayor(numero: string)` a la que le pasamos una string con el valor numérico.
+Hacemos uso de `numeros.push(parseInt(numero.split("")[i]))` para ir almacenando, como entero en un vector cada uno de las cifras que conforman el número. 
+Almacenamos el último valor y desde atrás hacia delante, si el número de la posición actual es mayor que el de a posición anterior, los intercambiamos.
+Una vez realizadas estas operaciones, si el valor resultante es otro del original podemos devolverlo:
 
+```
+Número: 123
+El valor inmediatamente mayor es:  132
+```
+```
+Número: 21
+El valor inmediatamente mayor es:  -1
+```
+
+### Ejercicio 8. Necesitamos averiguar el número de IPs disponibles entre un rango establecido.
+
+Necesitaremos de un función que llamaremos `ipsInRange(ip1, ip2)` y que va a reibir dos IPs, haciendo uso del método `ip1.split(".")` vamos a eliminar los puntos en las IP, guardando las cadenas resultantes en unas variables nuevas.
+Si existe un valor en la posición del penúltimo dígito que sea distinto de 0, como **10.0.1.0**, entonces a ese 1, le sumamos 256, consiguiendo que nos indique el valor de IPs que hay entre **10.0.1.0** y **10.0.0.0**.
+Si el valor de esta posición fuera 0, entonces solo debemos restar los valores de la posición final para lograr el intervalo.
+
+```
+La ip1 debe ser la mayor para realizar la resta
+Valor Ip1: 10.0.1.0
+Valor Ip2: 10.0.0.10
+**********************
+Ips disponibles: 246
+```
+```
+La ip1 debe ser la mayor para realizar la resta
+Valor Ip1: 10.0.3.0
+Valor Ip2: 10.0.0.50
+**********************
+Ips disponibles: 208
+```
+
+### Ejercicio 9. Un combate Pokémon. Queremos saber si somos un buen entrenador y queremos saber el daño que le hemos realizado al pokémon de nuestro oponente, además hemos introducido mejoras para saber cuánto daño nos han hecho a nosotros.
+
+Definimos los tipos `Agua`, `Fuego`, `Hierba` y `Eléctrico`, y establecemos en comparaciones dentro de varios if, todas las opciones posibles cuando un ataque del pokémon1 es súper efectivo contra el pokémon2 y viceversa, y de igual forma cuando son poco eficaces o neutros.
+Damos un ataque y defensa a cada uno de los contendientes y pasamos al cálculo de daño con la siguiente fórmula `daño = 50 * (ataque / defensa) * efectividad`.
+En una batalla entre un pokémon de tipo **Eléctrico** con **180 de ataque y 204 de defensa** y un pokémon de tipo **Fuego** con **160 de ataque y 204 de defensa**, estos serán los resultados de la batlla:
+```
+Entrenador1: Elijo un pokemon tipo: Electrico
+Entrenador2: Pues yo a un pokemon tipo: Fuego
+
+********************
+*     Battle!!     *
+********************
+
+El ataque del tipo Electrico causa al pokemon tipo Fuego 44.12 de daño
+El ataque del tipo Fuego causa al pokemon tipo Electrico 39.22 de daño
+```
+
+### Ejercicio 10. Averiguar si un nombre de usuario es válido partiendo de unas reglas:
+```
+El nombre de usuario tiene que tener al menos 4 caracteres y no más de 30.
+El nombre de usuario no puede empezar ni terminar con un guión bajo.
+El nombre de usuario tiene que contener al menos una letra mayúscula, una letra minúscula, un número y algún símbolo especial ($,-,_).
+No se permite la repetición de un mismo tipo de caracter más de dos veces seguidas.
+```
+
+Vamos a desarrollar 2 funciones, una llamada `isValidUsername(nombre: string)` donde dado un nombre de usuario, vamos a definir dentro las reglas descritas anteriormente por medio de expresiones regulares como por ejemplo la que necesitaremos para las letras mayúsculas `!/[A-Z]/`. Una vez establecidas las reglas, llamaremos a una segunda función llamada `verificarRepeticionesCaracter(nombre: string, numCaracteres: number)` facilitándole el nombre del Usuario y el número de caracteres de la cadena.
+Todos los casos contarán con un contador, y en caso de superar el máximo de repeticiones de cada tipo de caracter permitidas, inmediatamente nos avisará de que ese nombre de usuario no es válido. Y en caso contrario, nos indicará que si lo es y cumple con todos los requisitos.
+
+```
+Nombre: F4f5f-6
+Validando el nombre de usuario...
+El nombre de usuario F4f5f-6 es válido
+```
+```
+Nombre: F4f5f-666
+Validando el nombre de usuario...
+Se está repetiendo el caracter 6 más de dos veces consecutivas
+```
