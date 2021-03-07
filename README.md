@@ -1,5 +1,5 @@
 # Diseño de Sistemas Informátcos
-## Informe Práctica 2
+## Informe Práctica 3
 
 Autor: Saúl Pérez García
 
