@@ -1,6 +1,6 @@
-
+/*
 function Recombinar(num) {
   
 }
 
-var num: number = 123;
+var num: number = 123;*/

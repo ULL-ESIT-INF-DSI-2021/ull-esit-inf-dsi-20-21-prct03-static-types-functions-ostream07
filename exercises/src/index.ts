@@ -1,5 +1,5 @@
 //console.log("Hola mundo");
-function Chuck_Norris(punch) {
+/*function Chuck_Norris(punch) {
   var without_a: string = "";
   var without_e: string = "";
   var range: string = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
@@ -31,4 +31,4 @@ var delete_e = /e/g;
 
 //var resultado = punch.replace(delete_a, '');
 //console.log(resultado);
-Chuck_Norris(punch);
+Chuck_Norris(punch);*/
